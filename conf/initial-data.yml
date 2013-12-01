@@ -6,19 +6,19 @@ users:
     - !!models.User
         email:      guillaume@sample.com
         name:       Guillaume Bort
-        password:   secret
+        passwordHash:   secret
     
     - !!models.User
         email:      maxime@sample.com
         name:       Maxime Dantec
-        password:   secret
+        passwordHash:   secret
     
     - !!models.User
         email:      sadek@sample.com
         name:       Sadek Drobi
-        password:   secret
+        passwordHash:   secret
     
     - !!models.User
         email:      erwan@sample.com
         name:       Erwan Loisant
-        password:   secret
+        passwordHash:   secret

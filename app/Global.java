@@ -7,11 +7,25 @@ import java.util.*;
 //Global loads test data from out YAML file in dev mode.
 
 public class Global extends GlobalSettings {
-    @Override
+    
     public void onStart(Application app) {
-        // Check if the database is empty
-        if (User.find.findRowCount() == 0) {
-            Ebean.save((List) Yaml.load("initial-data.yml"));
-        }
+        InitialData.insert(app);
     }
+    
+    static class InitialData {
+        
+        public static void insert(Application app) {
+            if(Ebean.find(User.class).findRowCount() == 0) {
+                
+                @SuppressWarnings("unchecked")
+								Map<String,List<Object>> all = (Map<String,List<Object>>)Yaml.load("initial-data.yml");
+
+                // Insert users
+                Ebean.save(all.get("users"));
+                
+            }
+        }
+        
+    }
+    
 }
