@@ -1,7 +1,12 @@
-@(message: String)
+@(questions: List[Question])
 
 @main("Welcome to Play") {
 
-    @play20.welcome(message, style = "Java")
+    <header>
+        <hgroup>
+            <h1>Dashboard</h1>
+            <h2>Questions over users</h2>
+        </hgroup>
+    </header>
 
 }

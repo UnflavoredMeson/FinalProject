@@ -23,6 +23,9 @@ public class Global extends GlobalSettings {
                 // Insert users
                 Ebean.save(all.get("users"));
                 
+             // Insert questions
+                Ebean.save(all.get("questions"));
+                
             }
         }
         

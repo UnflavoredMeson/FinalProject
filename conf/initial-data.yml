@@ -22,3 +22,30 @@ users:
         email:      erwan@sample.com
         name:       Erwan Loisant
         passwordHash:   secret
+        
+# Questions
+
+question:
+
+    - !!models.Question
+        id:         1
+        fullQuestion:      What would a wood chuck chuck, if a wood chuck could chuck wood?   
+        difficultyLevel: 10
+        avgTime: 15
+        type: 1
+        possibleAnswers: 
+        owner: !!models.User
+                email: guillaume@sample.com
+                
+    - !!models.Question
+        id:         2
+        fullQuestion:      How many Solutions exist?   
+        difficultyLevel: 6
+        avgTime: 5
+        type: 2
+        possibleAnswers: 
+          - A
+          - B
+          - C
+        owner: !!models.User
+                email: erwan@sample.com

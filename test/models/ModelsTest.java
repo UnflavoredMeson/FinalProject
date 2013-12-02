@@ -1,7 +1,12 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import models.*;
+
 import org.junit.*;
+
 import static org.junit.Assert.*;
 import play.test.WithApplication;
 import static play.test.Helpers.*;
@@ -12,19 +17,20 @@ public class ModelsTest extends WithApplication {
     }
     
     @Test
-    public void createAndRetrieveUser() {
-        new User("chuck@gmail.com", "Chuck", "altoona").save();
-        User chuck = User.find.where().eq("email", "chuck@gmail.com").findUnique();
-        assertNotNull(chuck);
-        assertEquals("Chuck", chuck.name);
-    }
-    
-    @Test
-    public void tryAuthenticateUser() {
-        new User("chuck@gmail.com", "Chuck", "altoona").save();
+    public void findProjectsInvolving() {
+        new User("chuck@gmail.com", "Bob", "secret").save();
+        new User("susan@gmail.com", "Jane", "secret").save();
         
-        assertNotNull(User.authenticate("chuck@gmail.com", "altoona"));
-        assertNull(User.authenticate("user2@gmail.com", "badpassword"));
-        assertNull(User.authenticate("user3@gmail.com", "secret"));
+        List<String> answers = new ArrayList<String>();
+        answers.add("A");
+        answers.add("B");
+        answers.add("C");
+        
+        Question.create("Here is a simple question for you?", 1, 1, 60, null, "chuck@gmail.com");
+        Question.create("Non multiple choice example", 2, 2, 25, answers, "susan@gmail.com");
+
+        List<Question> results = Question.findInvolving("chuck@gmail.com");
+        assertEquals(1, results.size());
+        assertEquals("Here is a simple question for you?", results.get(0).fullQuestion);
     }
 }
