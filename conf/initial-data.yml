@@ -4,28 +4,28 @@
 users:
 
     - !!models.User
-        email:      guillaume@sample.com
-        name:       Guillaume Bort
+        email:      chuck@gmail.com
+        name:       Charles Smith
         passwordHash:   secret
     
     - !!models.User
-        email:      maxime@sample.com
-        name:       Maxime Dantec
+        email:      susan@gmail.com
+        name:       Susan Lockard
         passwordHash:   secret
     
     - !!models.User
-        email:      sadek@sample.com
-        name:       Sadek Drobi
+        email:      dummy@dummy.edu
+        name:       Dummy edu
         passwordHash:   secret
     
     - !!models.User
-        email:      erwan@sample.com
-        name:       Erwan Loisant
+        email:      sample@sample.com
+        name:       Sample User
         passwordHash:   secret
         
 # Questions
 
-question:
+questions:
 
     - !!models.Question
         id:         1
@@ -35,7 +35,7 @@ question:
         type: 1
         possibleAnswers: 
         owner: !!models.User
-                email: guillaume@sample.com
+                email: chuck@gmail.com
                 
     - !!models.Question
         id:         2
@@ -48,4 +48,4 @@ question:
           - B
           - C
         owner: !!models.User
-                email: erwan@sample.com
+                email: chuck@gmail.com

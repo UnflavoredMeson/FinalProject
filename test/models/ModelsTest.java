@@ -1,6 +1,5 @@
 package models;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import models.*;
@@ -16,21 +15,24 @@ public class ModelsTest extends WithApplication {
         start(fakeApplication(inMemoryDatabase()));
     }
     
+//    @Test
+//    public void tryAuthenticateUser() {
+//        new User("chuck@gmail.com", "Chuck", "secret").save();
+//        
+//        assertNotNull(User.authenticate("chuck@gmail.com", "secret"));
+//        assertNull(User.authenticate("chuck@gmail.com", "badpassword"));
+//        assertNull(User.authenticate("susan@gmail.com", "secret"));
+//    }
+    
     @Test
-    public void findProjectsInvolving() {
-        new User("chuck@gmail.com", "Bob", "secret").save();
-        new User("susan@gmail.com", "Jane", "secret").save();
-        
-        List<String> answers = new ArrayList<String>();
-        answers.add("A");
-        answers.add("B");
-        answers.add("C");
-        
-        Question.create("Here is a simple question for you?", 1, 1, 60, null, "chuck@gmail.com");
-        Question.create("Non multiple choice example", 2, 2, 25, answers, "susan@gmail.com");
+    public void findQuestionsInvolving() {
+        User chuck = new User("chuck@gmail.com", "Chuck", "secret");
+        chuck.save();
 
-        List<Question> results = Question.findInvolving("chuck@gmail.com");
+        Question question = Question.create("New", 1, 1, 1, null, "chuck@gmail.com");
+
+        List<Question> results = Question.findQuestionsOwnedBy("chuck@gmail.com");
         assertEquals(1, results.size());
-        assertEquals("Here is a simple question for you?", results.get(0).fullQuestion);
+        assertEquals("New", results.get(0).fullQuestion);
     }
 }
