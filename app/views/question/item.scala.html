@@ -1,5 +1,33 @@
 @(question: Question)
 
+
+<script type="text/javascript">
+$('.newQuestion').click(function() {
+  javascriptRoutes.controllers.Questions.add().ajax({
+      success: function(data) {
+          $("#result").html(data);
+        },
+        error: function() {
+          alert("Error!")
+        }
+        });
+});
+
+$('.deleteQuestion').click(function() {
+	  javascriptRoutes.controllers.Questions.delete(0).ajax({
+	      success: function(data) {
+	          $("#result").html(data);
+	        },
+	        error: function() {
+	          alert("Error!")
+	        }
+	        });
+	});
+
+
+</script>
+
+
                 <div class="folder" data-folder-id="@question.id">
                     <header>
                         <h3>@question.fullQuestion</h3>
