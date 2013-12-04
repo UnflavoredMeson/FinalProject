@@ -45,4 +45,11 @@ public class Question extends Model {
 	public static List<Question> findQuestionsOwnedBy(String user) {
 		return find.where().eq("owner.email", user).findList();
 	}
+	
+	public static String changeQuestion(Long questionId, String fullQuestion) {
+	    Question question = find.ref(questionId);
+	    question.fullQuestion = fullQuestion;
+	    question.update();
+	    return fullQuestion;
+	}
 }
