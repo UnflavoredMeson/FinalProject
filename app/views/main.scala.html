@@ -1,4 +1,4 @@
-@(questions: List[Question])(content: Html)
+@(questions: List[Question], user: User)(content: Html)
 
 <!DOCTYPE html>
 
@@ -11,6 +11,13 @@
     <body>
         <header>
             <a href="@routes.Application.index" id="logo"><span>Questions</span>Applications</a>
+         <dl id="user">
+         <dt>@user.name <span>(@user.email)</span></dt>
+        <dt>User</dt>
+        <dd>
+            <a href="@routes.Application.logout()">Logout</a>
+        </dd>
+    </dl>
         </header>
         <nav>
             <h4 class="userpage"><a href="#/">User Page</a></h4>
