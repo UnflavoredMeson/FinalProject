@@ -44,8 +44,5 @@ questions:
         avgTime: 5
         type: 2
         possibleAnswers: 
-          - A
-          - B
-          - C
         owner: !!models.User
                 email: chuck@gmail.com

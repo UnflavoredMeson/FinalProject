@@ -1,0 +1,11 @@
+@(question: Question)
+
+                <div class="folder" data-folder-id="@question.id">
+                    <header>
+                        <h3>@question.fullQuestion</h3>
+                    </header>
+                    <ul class="list">
+                                <span class="ownedBy">@question.owner.email</span>
+                            </li>
+                    </ul>
+                </div>

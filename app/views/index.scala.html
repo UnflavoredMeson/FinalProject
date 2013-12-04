@@ -1,12 +1,16 @@
-@(questions: List[Question])
+@(question: List[Question])
 
-@main("Welcome to Play") {
+@main(question) {
 
     <header>
         <hgroup>
-            <h1>Dashboard</h1>
-            <h2>Questions over users</h2>
+            <h1>User Page</h1>
+            <h2>Questions</h2>
         </hgroup>
     </header>
+
+		@question.map { question =>
+			@views.html.question.item(question)
+        }
 
 }
