@@ -21,11 +21,11 @@ public class ConAbstractsTest extends WithApplication {
 		start(fakeApplication(inMemoryDatabase(), fakeGlobal()));
 		if (Ebean.find(User.class).findRowCount() == 0) {
 
-			//@SuppressWarnings("unchecked")
-			//Map<String, List<Object>> all = (Map<String, List<Object>>) Yaml.load("initial-data.yml");
+			@SuppressWarnings("unchecked")
+			Map<String, List<Object>> all = (Map<String, List<Object>>) Yaml.load("initial-data.yml");
 
 			// Insert users first
-			//Ebean.save(all.get("users"));
+			Ebean.save(all.get("users"));
 
             // Insert abstracts
             //Ebean.save(all.get("abstracts"));
@@ -40,11 +40,11 @@ public class ConAbstractsTest extends WithApplication {
 		        fakeRequest().withSession("email", "bob@example.com")
 		    );
 		    assertEquals(200, status(result));
-//		    ConAbstract conabstract = ConAbstract.find.where()
-//		        .eq("title", "New Absrtact").findUnique();
-//		    assertNotNull(conabstract);
-//		    assertEquals("New Absrtact", conabstract.title);
-//		    assertEquals("bob@example.com", conabstract.owner.email);
+		    ConAbstract conabstract = ConAbstract.find.where()
+		        .eq("title", "New Abstract").findUnique();
+		    assertNotNull(conabstract);
+		    assertEquals("New Abstract", conabstract.title);
+		    assertEquals("bob@example.com", conabstract.owner.email);
 		}
 		
 //		@Test

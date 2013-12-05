@@ -19,7 +19,7 @@ users:
         passwordHash:   secret
     
     - !!models.User
-        email:      sample@sample.com
+        email:      bob@example.com
         name:       Sample User
         passwordHash:   secret
         
