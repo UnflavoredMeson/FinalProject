@@ -34,9 +34,9 @@ abstracts:
         link: PennState Altoona
         url: http//www.altoona.psu.edu/academics/physics_microwave.php
         publicationDate: 2007-10-01
-        abstractBody: his project has proceeded along two main lines of inquiry. During the first two years of work, we investigated the heating and sintering of powdered metal compacts by microwave radiation. A few years earlier, experiments by Roy and co-workers at Penn State UP had demonstrated that metal-powder compacts are heated in both electric and magnetic microwave fields. We confirmed these results in early work at Penn State Altoona. Our research then turned to the question of how metal-powder compacts are heated so efficiently by microwave radiation. We addressed the question in three ways doing an empirical study of the complex permittivity and permeability of powder metal compacts as a function of temperature, particle size, particle oxidation, and packing density using resonant-cavity techniques; identifying the separate contributions of the E and H fields to the heating and subsequent sintering of powder metal compacts using a single-mode microwave system; evaluating the first stages of sintering by direct examination of heated samples using scanning and transmission electron microscopy.
+        abstractBody: his project has proceeded along two main lines of inquiry. 
         owner: !!models.User
-                email: chuck@gmail.com
+               email: chuck@gmail.com
                 
     - !!models.ConAbstract
         id:         2
@@ -45,9 +45,9 @@ abstracts:
         link: PennState Altoona
         url: http//www.altoona.psu.edu/academics/physics_microwave.php
         publicationDate: 2008-07-01
-        abstractBody: Our future work will seek to extend our study of percolation in metal-insulator composites by strengthening our characterization capabilities and by deepening our understanding of electromagnetic transport. We will build on earlier work by ourselves and others to address a central question How do the various transport processes (electron tunneling, hopping, magnetic dipole
+        abstractBody: Our future work will seek to extend our study of percolation in metal-insulator composites by strengthening our characterization capabilities and by deepening our understanding of electromagnetic transport.
         owner: !!models.User
-                email: chuck@gmail.com
+               email: chuck@gmail.com
                 
     - !!models.ConAbstract
         id:         3
@@ -58,4 +58,4 @@ abstracts:
         publicationDate: 1950-01-01
         abstractBody: Did anyone evey stop to question?
         owner: !!models.User
-                email: susan@gmail.com
+               email: susan@gmail.com
