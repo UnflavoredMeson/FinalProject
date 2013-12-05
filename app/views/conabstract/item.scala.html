@@ -1,0 +1,18 @@
+@(conabstract: ConAbstract)
+
+                <div>
+                    <header>
+                        <h3>@conabstract.title</h3>
+                    </header>
+                    <ul class="list">
+                    <span class="ownedBy">@conabstract.owner.email</span>
+                    </ul>
+                    
+                        <dl class="options">
+        <dt>Options</dt>
+        <dd>
+            <button class="newQuestion">New question</button>
+            <button class="deleteQuestion">Remove question</button>
+        </dd>
+    </dl>
+                </div>

@@ -3,14 +3,15 @@
 
 # --- !Ups
 
-create table question (
+create table con_abstract (
   id                        bigint not null,
-  full_question             varchar(255),
-  difficulty_level          integer,
-  avg_time                  integer,
-  type                      integer,
-  owner_email               varchar(255),
-  constraint pk_question primary key (id))
+  title                     varchar(255),
+  cite                      varchar(255),
+  link                      varchar(255),
+  url                       varchar(255),
+  publication_date          timestamp,
+  abstract_body             varchar(255),
+  constraint pk_con_abstract primary key (id))
 ;
 
 create table user (
@@ -20,12 +21,10 @@ create table user (
   constraint pk_user primary key (email))
 ;
 
-create sequence question_seq;
+create sequence con_abstract_seq;
 
 create sequence user_seq;
 
-alter table question add constraint fk_question_owner_1 foreign key (owner_email) references user (email) on delete restrict on update restrict;
-create index ix_question_owner_1 on question (owner_email);
 
 
 
@@ -33,13 +32,13 @@ create index ix_question_owner_1 on question (owner_email);
 
 SET REFERENTIAL_INTEGRITY FALSE;
 
-drop table if exists question;
+drop table if exists con_abstract;
 
 drop table if exists user;
 
 SET REFERENTIAL_INTEGRITY TRUE;
 
-drop sequence if exists question_seq;
+drop sequence if exists con_abstract_seq;
 
 drop sequence if exists user_seq;
 

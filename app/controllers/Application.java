@@ -13,7 +13,7 @@ public class Application extends Controller {
 	@Security.Authenticated(Secured.class)
     public static Result index() {
         return ok(index.render( 
-                Question.find.all(),
+                ConAbstract.find.all(),
                 User.find.byId(request().username())
             )); 
     }
@@ -59,15 +59,15 @@ public class Application extends Controller {
 
     }
     
-    public static Result javascriptRoutes() {
-        response().setContentType("text/javascript");
-        return ok(
-            Routes.javascriptRouter("jsRoutes",
-                controllers.routes.javascript.Questions.add(),
-                controllers.routes.javascript.Questions.delete(),
-                controllers.routes.javascript.Questions.rename()
-            )
-        );
-    }
+//    public static Result javascriptRoutes() {
+//        response().setContentType("text/javascript");
+//        return ok(
+//            Routes.javascriptRouter("jsRoutes",
+//                controllers.routes.javascript.Questions.add(),
+//                controllers.routes.javascript.Questions.delete(),
+//                controllers.routes.javascript.Questions.rename()
+//            )
+//        );
+//    }
 
 }

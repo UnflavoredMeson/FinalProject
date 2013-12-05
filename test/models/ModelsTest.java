@@ -25,14 +25,14 @@ public class ModelsTest extends WithApplication {
 //    }
     
     @Test
-    public void findQuestionsInvolving() {
-        User chuck = new User("chuck@gmail.com", "Chuck", "secret");
-        chuck.save();
+    public void findQuestionsOwnedBy() {
+        //User chuck = new User("chuck@gmail.com", "Chuck", "secret");
+        //chuck.save();
 
-        Question question = Question.create("New", 1, 1, 1, null, "chuck@gmail.com");
+        //ConAbstract conabstarct = ConAbstract.create("New", 1, 1, 1, null, "chuck@gmail.com");
 
-        List<Question> results = Question.findQuestionsOwnedBy("chuck@gmail.com");
-        assertEquals(1, results.size());
-        assertEquals("New", results.get(0).fullQuestion);
+        List<ConAbstract> results = ConAbstract.findQuestionsOwnedBy("chuck@gmail.com");
+        assertEquals(2, results.size());
+        assertEquals("Microwave Absorption in Percolating Metal-insulator Composites", results.get(0).title);
     }
 }

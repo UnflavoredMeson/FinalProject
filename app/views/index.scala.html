@@ -1,6 +1,6 @@
-@(question: List[Question], user: User)
+@(conabstract: List[ConAbstract], user: User)
 
-@main(question, user) {
+@main(conabstract, user) {
 
     <header>
         <hgroup>
@@ -9,8 +9,8 @@
         </hgroup>
     </header>
 
-		@question.map { question =>
-			@views.html.question.item(question)
+		@conabstract.map { conabstract =>
+			@views.html.conabstract.item(conabstract)
         }
 
 }

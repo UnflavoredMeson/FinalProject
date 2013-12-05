@@ -23,26 +23,39 @@ users:
         name:       Sample User
         passwordHash:   secret
         
-# Questions
+# Abstracts
 
-questions:
+abstracts:
 
-    - !!models.Question
+    - !!models.ConAbstract
         id:         1
-        fullQuestion:      What would a wood chuck chuck, if a wood chuck could chuck wood?   
-        difficultyLevel: 10
-        avgTime: 15
-        type: 1
-        possibleAnswers: 
+        title: Systematic Study of Microwave Absorption, Heating, and Microstructure Evolution of Porous Copper Powder Metal Compacts
+        cite: J. Ma, J.F. Diehl, E.J. Johnson, K.R. Martin, N.M. Miskovsky, C.T. Smith, G.J. Weisel, B.L. Weiss, and D.T. Zimmerman
+        link: PennState Altoona
+        url: http//www.altoona.psu.edu/academics/physics_microwave.php
+        publicationDate: 2007-10-01
+        abstractBody: his project has proceeded along two main lines of inquiry. During the first two years of work, we investigated the heating and sintering of powdered metal compacts by microwave radiation. A few years earlier, experiments by Roy and co-workers at Penn State UP had demonstrated that metal-powder compacts are heated in both electric and magnetic microwave fields. We confirmed these results in early work at Penn State Altoona. Our research then turned to the question of how metal-powder compacts are heated so efficiently by microwave radiation. We addressed the question in three ways doing an empirical study of the complex permittivity and permeability of powder metal compacts as a function of temperature, particle size, particle oxidation, and packing density using resonant-cavity techniques; identifying the separate contributions of the E and H fields to the heating and subsequent sintering of powder metal compacts using a single-mode microwave system; evaluating the first stages of sintering by direct examination of heated samples using scanning and transmission electron microscopy.
         owner: !!models.User
                 email: chuck@gmail.com
                 
-    - !!models.Question
+    - !!models.ConAbstract
         id:         2
-        fullQuestion:      How many Solutions exist?   
-        difficultyLevel: 6
-        avgTime: 5
-        type: 2
-        possibleAnswers: 
+        title: Microwave Absorption in Percolating Metal-insulator Composites
+        cite: D.T. Zimmerman, J. D. Cardellino, K. T. Cravener, K. R. Feather, N. M. Miskovsky, and G. J. Weisel
+        link: PennState Altoona
+        url: http//www.altoona.psu.edu/academics/physics_microwave.php
+        publicationDate: 2008-07-01
+        abstractBody: Our future work will seek to extend our study of percolation in metal-insulator composites by strengthening our characterization capabilities and by deepening our understanding of electromagnetic transport. We will build on earlier work by ourselves and others to address a central question How do the various transport processes (electron tunneling, hopping, magnetic dipole
         owner: !!models.User
                 email: chuck@gmail.com
+                
+    - !!models.ConAbstract
+        id:         3
+        title: Is it E=mc^2?
+        cite: Hertz, Adam
+        link: Abstract E = mc^2
+        url: Http//e.mc
+        publicationDate: 1950-01-01
+        abstractBody: Did anyone evey stop to question?
+        owner: !!models.User
+                email: susan@gmail.com

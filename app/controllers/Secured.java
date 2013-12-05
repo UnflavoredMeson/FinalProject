@@ -17,4 +17,11 @@ public class Secured extends Security.Authenticator {
     public Result onUnauthorized(Context ctx) {
         return redirect(routes.Application.login());
     }
+    
+    public static boolean ownes(Long conabstract) {
+        return ConAbstract.ownes(
+        		conabstract,
+            Context.current().request().username()
+        );
+    }
 }
